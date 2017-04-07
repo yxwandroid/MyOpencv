@@ -5,14 +5,12 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.LoaderCallbackInterface;
-import org.opencv.android.OpenCVLoader;
 import org.opencv.android.Utils;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
@@ -96,8 +94,8 @@ public class MainActivity extends BaseActivity {
                         src = new Mat(selectedImage.getHeight(), selectedImage.getWidth(), CvType.CV_8UC4);
                         Utils.bitmapToMat(selectedImage, src);
                         switch (ACTION_MODE) {
-                            case HomeActivity.GAUSSIAN_BLUR:
-                                Imgproc.GaussianBlur(src, src, new Size(3, 3), 0);
+                            case HomeActivity.GAUSSIAN_BLUR:  //高斯模糊
+                                Imgproc.GaussianBlur(src, src, new Size(91, 91), 0);
                                 break;
                             case HomeActivity.MEAN_BLUR://均值模块
                                 Imgproc.blur(src, src, new Size(10, 10));
@@ -109,18 +107,18 @@ public class MainActivity extends BaseActivity {
                                 Mat kernel = new Mat(3, 3, CvType.CV_16SC1);
                                 //int[] values = {0, -1, 0, -1, 5, -1, 0, -1, 0};
                                 // Log.d("com.packtpub.masteringopencvandroid.imageType", CvType.typeToString(src.type())+"");
-                                kernel.put(0, 0, 0, -1, 0, -1, 5, -1, 0, -1, 0);
+                                kernel.put(0, 0, 0, -6, 0, -1, 15, -1, 0, -6, 0);
                                 Imgproc.filter2D(src, src, src.depth(), kernel);
                                 break;
-                            case HomeActivity.DILATE:
+                            case HomeActivity.DILATE://膨胀
                                 Mat kernelDilate = Imgproc.getStructuringElement(Imgproc.MORPH_RECT, new Size(3, 3));
                                 Imgproc.dilate(src, src, kernelDilate);
                                 break;
-                            case HomeActivity.ERODE:
+                            case HomeActivity.ERODE://腐蚀
                                 Mat kernelErode = Imgproc.getStructuringElement(Imgproc.MORPH_ELLIPSE, new Size(5, 5));
                                 Imgproc.erode(src, src, kernelErode);
                                 break;
-                            case HomeActivity.THRESHOLD:
+                            case HomeActivity.THRESHOLD: //二值化
                                 Imgproc.threshold(src, src, 100, 255, Imgproc.THRESH_BINARY);
                                 break;
                             case HomeActivity.ADAPTIVE_THRESHOLD:
@@ -144,13 +142,13 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
-        if (!OpenCVLoader.initDebug()) {
-            Log.d(TAG, "Internal OpenCV library not found. Using OpenCV Manager for initialization");
-            OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_10, this, mOpenCVCallBack);
-        } else {
-            Log.d(TAG, "OpenCV library found inside package. Using it!");
-            mOpenCVCallBack.onManagerConnected(LoaderCallbackInterface.SUCCESS);
-        }
+//
+//        if (!OpenCVLoader.initDebug()) {
+//            Log.d(TAG, "Internal OpenCV library not found. Using OpenCV Manager for initialization");
+//            OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_10, this, mOpenCVCallBack);
+//        } else {
+//            Log.d(TAG, "OpenCV library found inside package. Using it!");
+//            mOpenCVCallBack.onManagerConnected(LoaderCallbackInterface.SUCCESS);
+//        }
     }
 }
