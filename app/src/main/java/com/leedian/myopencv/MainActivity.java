@@ -99,8 +99,8 @@ public class MainActivity extends BaseActivity {
                             case HomeActivity.GAUSSIAN_BLUR:
                                 Imgproc.GaussianBlur(src, src, new Size(3, 3), 0);
                                 break;
-                            case HomeActivity.MEAN_BLUR:
-                                Imgproc.blur(src, src, new Size(3, 3));
+                            case HomeActivity.MEAN_BLUR://均值模块
+                                Imgproc.blur(src, src, new Size(10, 10));
                                 break;
                             case HomeActivity.MEDIAN_BLUR:
                                 Imgproc.medianBlur(src, src, 3);
@@ -144,6 +144,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
+
         if (!OpenCVLoader.initDebug()) {
             Log.d(TAG, "Internal OpenCV library not found. Using OpenCV Manager for initialization");
             OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_10, this, mOpenCVCallBack);
