@@ -20,15 +20,16 @@ public class HomeActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        Button bMean, bGaussian, bMedian, bSharpen, bDilate, bErode, bThreshold, bAdaptiveThreshold;
-        bMean = (Button)findViewById(R.id.bMean);
-        bMedian = (Button)findViewById(R.id.bMedian);
-        bGaussian = (Button)findViewById(R.id.bGaussian);
-        bSharpen = (Button)findViewById(R.id.bSharpen);
-        bDilate = (Button)findViewById(R.id.bDilate);
-        bErode = (Button)findViewById(R.id.bErode);
-        bThreshold = (Button)findViewById(R.id.bThreshold);
-        bAdaptiveThreshold = (Button)findViewById(R.id.bAdaptiveThreshold);
+        Button bMean, bGaussian, bMedian, bSharpen, bDilate, bErode, bThreshold, bAdaptiveThreshold, Camera;
+        bMean = (Button) findViewById(R.id.bMean);
+        bMedian = (Button) findViewById(R.id.bMedian);
+        bGaussian = (Button) findViewById(R.id.bGaussian);
+        bSharpen = (Button) findViewById(R.id.bSharpen);
+        bDilate = (Button) findViewById(R.id.bDilate);
+        bErode = (Button) findViewById(R.id.bErode);
+        bThreshold = (Button) findViewById(R.id.bThreshold);
+        bAdaptiveThreshold = (Button) findViewById(R.id.bAdaptiveThreshold);
+        Camera = (Button) findViewById(R.id.Camera);
 
         bMean.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,6 +99,13 @@ public class HomeActivity extends BaseActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), MainActivity.class);
                 i.putExtra("ACTION_MODE", ADAPTIVE_THRESHOLD);
+                startActivity(i);
+            }
+        });
+        Camera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), Camera.class);
                 startActivity(i);
             }
         });
