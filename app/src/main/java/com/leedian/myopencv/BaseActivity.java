@@ -16,6 +16,7 @@ public class BaseActivity extends AppCompatActivity {
     private static final int WRITE_EXTERNAL_STORAGE_REQUEST_CODE = 11;
     static {
         if (OpenCVLoader.initDebug()) {
+            //System.loadLibrary("nonfree");
             Log.d(TAG, "static initializer: success");
         } else {
             Log.d(TAG, "static initializer: fail");

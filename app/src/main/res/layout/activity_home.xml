@@ -61,5 +61,37 @@
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:text="Camera" />
+
+
+        <Button
+            android:id="@+id/bSIFT"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="SIFT" />
+
+        <Button
+            android:id="@+id/bSURF"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="SURF" />
+
+        <Button
+            android:id="@+id/bORB"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="ORB" />
+
+        <Button
+            android:id="@+id/bBRISK"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="BRISK" />
+
+        <Button
+            android:id="@+id/bFREAK"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="FREAK" />
+
     </LinearLayout>
 </ScrollView>
