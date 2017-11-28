@@ -1,14 +1,15 @@
-# MyOpencv
-# 高斯模糊
-     Imgproc.GaussianBlur(src, src, new Size(3, 3), 0);
-     ``
-# 2均值模糊
+### MyOpencv
+ android相关学习总结
+ 参考:
+ 深入 opencv  android 开发  
 
-[参考](http://blog.csdn.net/jia20003/article/details/7201069)
+#### 均值模糊
+     
+     定义: 给指定核所覆盖的元素计算均值
      Imgproc.blur(src, src, new Size(10, 10));
-![blur](http://oo0vme8mf.bkt.clouddn.com/blur.png)
-
-
+#### 高斯模糊
+     
+     Imgproc.GaussianBlur(src, src, new Size(3, 3), 0);
 # 3锐化
 # 4膨胀
 # 5腐蚀

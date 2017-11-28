@@ -94,16 +94,17 @@ public class MainActivity extends BaseActivity {
                         src = new Mat(selectedImage.getHeight(), selectedImage.getWidth(), CvType.CV_8UC4);
                         Utils.bitmapToMat(selectedImage, src);
                         switch (ACTION_MODE) {
+                            case HomeActivity.MEAN_BLUR://均值模块
+                                Imgproc.blur(src, src, new Size(9, 9));
+                                break;
                             case HomeActivity.GAUSSIAN_BLUR:  //高斯模糊
                                 Imgproc.GaussianBlur(src, src, new Size(91, 91), 0);
                                 break;
-                            case HomeActivity.MEAN_BLUR://均值模块
-                                Imgproc.blur(src, src, new Size(10, 10));
-                                break;
-                            case HomeActivity.MEDIAN_BLUR:
+
+                            case HomeActivity.MEDIAN_BLUR: // 中值模糊
                                 Imgproc.medianBlur(src, src, 3);
                                 break;
-                            case HomeActivity.SHARPEN:
+                            case HomeActivity.SHARPEN:   //自定义核进行卷积运算
                                 Mat kernel = new Mat(3, 3, CvType.CV_16SC1);
                                 //int[] values = {0, -1, 0, -1, 5, -1, 0, -1, 0};
                                 // Log.d("com.packtpub.masteringopencvandroid.imageType", CvType.typeToString(src.type())+"");
@@ -121,7 +122,7 @@ public class MainActivity extends BaseActivity {
                             case HomeActivity.THRESHOLD: //二值化
                                 Imgproc.threshold(src, src, 100, 255, Imgproc.THRESH_BINARY);
                                 break;
-                            case HomeActivity.ADAPTIVE_THRESHOLD:
+                            case HomeActivity.ADAPTIVE_THRESHOLD:// 自适应阀值
                                 Imgproc.cvtColor(src, src, Imgproc.COLOR_BGR2GRAY);
                                 Imgproc.adaptiveThreshold(src, src, 255, Imgproc.ADAPTIVE_THRESH_GAUSSIAN_C, Imgproc.THRESH_BINARY, 3, 0);
                                 break;

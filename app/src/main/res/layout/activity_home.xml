@@ -1,96 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
+
     <LinearLayout
-        android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:orientation="vertical" >
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/bMean"
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="Mean Blur" />
+            android:layout_height="wrap_content"
+            android:text="Mean Blur(均值模糊)" />
 
         <Button
             android:id="@+id/bGaussian"
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="Gaussian Blur" />
+            android:layout_height="wrap_content"
+            android:text="Gaussian Blur(高斯模糊)" />
 
         <Button
             android:id="@+id/bMedian"
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="Median Blur" />
+            android:layout_height="wrap_content"
+            android:text="Median Blur(中值模糊)" />
 
         <Button
             android:id="@+id/bSharpen"
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="Sharpen Image" />
+            android:layout_height="wrap_content"
+            android:text="Sharpen Image(自定义核)" />
 
         <Button
             android:id="@+id/bDilate"
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="Dilate Image" />
+            android:layout_height="wrap_content"
+            android:text="Dilate Image(膨胀)" />
 
         <Button
             android:id="@+id/bErode"
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="Erode Image" />
+            android:layout_height="wrap_content"
+            android:text="Erode Image(腐蚀)" />
 
         <Button
             android:id="@+id/bThreshold"
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="Threshold Image" />
+            android:layout_height="wrap_content"
+            android:text="Threshold Image(阀值化)" />
 
         <Button
             android:id="@+id/bAdaptiveThreshold"
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="Adaptive Threshold" />
+            android:layout_height="wrap_content"
+            android:text="Adaptive Threshold(自适应阀值)" />
+
         <Button
             android:id="@+id/Camera"
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Camera" />
 
 
         <Button
             android:id="@+id/bSIFT"
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="SIFT" />
 
         <Button
             android:id="@+id/bSURF"
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="SURF" />
 
         <Button
             android:id="@+id/bORB"
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="ORB" />
 
         <Button
             android:id="@+id/bBRISK"
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="BRISK" />
 
         <Button
             android:id="@+id/bFREAK"
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="FREAK" />
 
     </LinearLayout>
